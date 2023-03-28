@@ -1,0 +1,176 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  font-size: large;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-variant: petite-caps;
+  color: #fffffff5;
+  letter-spacing: 10px;
+  font-weight: inherit;
+  padding: 0.5em;
+  font-size: xxx-large;
+}
+
+form {
+  display: flex;
+  margin-bottom: 20px;
+  width: 35%;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px 0px 0px 20px;
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  color: white;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #008CBA;
+  border: none;
+  border-radius: 0px 20px 20px 0px;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #006B8F;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-flow: column;
+  justify-content: space-around;
+  width: 50%;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+  width: 100%;
+  flex-flow: row;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  padding: 1em;
+  scale: 1.4;
+}
+
+.todo-text {
+  flex: 1;
+  color: #ffffffcf;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.gradient-background {
+  background: linear-gradient(196deg,#e39c66,#787655,#145f65,#ed294c,#991781,#f3117d);
+  background-size: 360% 360%;
+  animation: gradient-animation 42s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 20% 50%;
+  }
+  30% {
+    background-position: 70% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  70% {
+    background-position: 80% 50%;
+  }
+  100% {
+    background-position: 20% 50%;
+  }
+}
+
+@media (max-width: 720px) {
+  ul {
+    width: 90%;
+  }
+  form {
+    width: unset;
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
+      }
+    
+      30% {
+        background-position: 70% 50%;
+      }
+    
+      50% {
+        background-position: 100% 50%;
+      }
+    
+      70% {
+        background-position: 80% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+}

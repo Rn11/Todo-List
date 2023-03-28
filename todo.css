@@ -86,6 +86,8 @@ li {
   width: 100%;
   flex-flow: row;
   background: rgba(255, 255, 255, 0.05);
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 li:last-child {
@@ -117,6 +119,16 @@ input[type="checkbox"] {
 
 .delete-btn:hover {
   background-color: #d32f2f;
+}
+
+li:first-child {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+li:last-child {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .gradient-background {

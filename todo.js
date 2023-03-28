@@ -51,6 +51,7 @@ function fade(element) {
         if (op <= 0.1) {
             clearInterval(timer);
             element.style.display = 'none';
+            element.parentNode.removeChild(element);
         }
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
@@ -68,7 +69,7 @@ function unfade(element) {
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op += op * 0.1;
-    }, 10);
+    }, 50);
 }
 
 // render items
@@ -111,7 +112,6 @@ function renderTodoItems(animateItem) {
 
         i++;
     });
-
 }
 
 // delete an item by id
@@ -120,7 +120,6 @@ function deleteTodoItem(todoId) {
     setTimeout(2000);
     todoItems = todoItems.filter((todoItem) => todoItem.id !== parseInt(todoId));
     localStorage.setItem("todos", JSON.stringify(todoItems));
-
 }
 
 // edit an item
@@ -130,7 +129,7 @@ function editTodoItem(todoId) {
     if (todoText !== null && todoText !== "") {
         todoItem.text = todoText;
         localStorage.setItem("todos", JSON.stringify(todoItems));
-        renderTodoItems(true);
+        renderTodoItems(false);
     }
 }
 
